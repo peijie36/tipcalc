@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val amountInput = findViewById<EditText>(R.id.et_amount)
+        val tipButton = findViewById<Button>(R.id.btn_tip)
         amountInput.addTextChangedListener {
-            val tipButton = findViewById<Button>(R.id.btn_tip)
             tipButton.isEnabled = !amountInput.text.toString().isBlank()
         }
     }
@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     fun calculateTip(view: View) {
         val amountInput = findViewById<EditText>(R.id.et_amount)
         val tip : Double = amountInput.text.toString().toDouble() * 0.15
-        Toast.makeText(this,"$${tip}", Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"$${round2DecimalPlaces(tip)}", Toast.LENGTH_LONG).show()
+    }
+
+    private fun round2DecimalPlaces(input: Double): Double {
+        return String.format("%.2f", input).toDouble()
     }
 }

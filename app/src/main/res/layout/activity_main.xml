@@ -5,20 +5,21 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:layout_marginBottom="40dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txt_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Amount: $"
-            android:textSize="20dp"
+            android:labelFor="@+id/et_amount"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +27,10 @@
 
         <EditText
             android:id="@+id/et_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            />
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:inputType="numberDecimal" />
+
     </LinearLayout>
 
     <Button
@@ -37,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Tip!"
+        android:text="Tip"
         android:enabled="false"
         android:onClick="calculateTip" />
 
